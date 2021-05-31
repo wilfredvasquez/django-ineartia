@@ -4,6 +4,7 @@
   "description": "Django Inertia Demo",
   "main": "index.js",
   "scripts": {
+    "parcel": "parcel watch static/src/* -d static/dist/ --public-url static/dist/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +20,14 @@
   "dependencies": {
     "@inertiajs/inertia": "^0.9.0",
     "@inertiajs/inertia-vue": "^0.6.1",
-    "vue": "^2.6.12"
+    "@inertiajs/progress": "^0.2.5",
+    "parcel-bundler": "^1.12.5",
+    "portal-vue": "^2.1.7",
+    "vue": "^2.6.12",
+    "vue-hot-reload-api": "^2.3.4"
+  },
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^3.2.0",
+    "vue-template-compiler": "^2.6.12"
   }
 }

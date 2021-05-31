@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'js_routes',
+    'inertia',
 
     'app.apps.AppConfig'
 ]
@@ -133,3 +135,14 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+
+
+JS_ROUTES_INCLUSION_LIST = [
+    'app',
+]
+
+# CSRF_HEADER_NAME="HTTP_X_CSRFTOKEN"
+VERSION=2
+CSRF_COOKIE_NAME = "XSRF-TOKEN"
+CSRF_HEADER_NAME = "HTTP_X_XSRF_TOKEN"
+INERTIA_SHARE=False
