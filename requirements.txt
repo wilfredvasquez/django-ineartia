@@ -1,0 +1,8 @@
+Django==3.1.6
+django-allauth==0.44.0
+django-environ==0.4.5
+django-extensions==3.1.1
+psycopg2-binary==2.8.6
+ipdb==0.13.8
+ipython==7.24.0
+django-model-utils
