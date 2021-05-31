@@ -1,0 +1,24 @@
+- model: app.note
+  pk: 1
+  fields: {
+    excerpt: 'Sint velit eveniet.',
+    content: 'Sint velit eveniet. Rerum atque repellat voluptatem quia rerum. Numquam excepturi 
+              beatae sint laudantium consequatur. Magni occaecati itaque sint et sit tempore. Nesciunt
+              amet quidem. Iusto deleniti cum autem ad quia aperiam.',
+  }
+- model: app.note
+  pk: 2
+  fields: {
+    excerpt: 'Rerum atque repellat.',
+    content: 'Sint velit eveniet. Rerum atque repellat voluptatem quia rerum. Numquam excepturi 
+              beatae sint laudantium consequatur. Magni occaecati itaque sint et sit tempore. Nesciunt
+              amet quidem. Iusto deleniti cum autem ad quia aperiam.',
+  }
+- model: app.note
+  pk: 3
+  fields: {
+    excerpt: 'Numquam excepturi beatae.',
+    content: 'Sint velit eveniet. Rerum atque repellat voluptatem quia rerum. Numquam excepturi 
+              beatae sint laudantium consequatur. Magni occaecati itaque sint et sit tempore. Nesciunt
+              amet quidem. Iusto deleniti cum autem ad quia aperiam.',
+  }
