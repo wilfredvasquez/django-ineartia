@@ -4,8 +4,11 @@
   "description": "Django Inertia Demo",
   "main": "index.js",
   "scripts": {
-    "parcel": "parcel watch static/src/* -d static/dist/ --public-url static/dist/",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "runserver": "cross-env PYTHONUNBUFFERED=1 python manage.py runserver 0.0.0.0:8000",
+    "parcel": "parcel watch static/src/* -d static/dist/ --public-url /static/dist/",
+    "build": "parcel build static/src/* -d static/dist/ --public-url /static/dist/",
+    "dev": "concurrently npm:parcel npm:runserver",
+    "test_django": "python manage.py test"
   },
   "repository": {
     "type": "git",
@@ -21,6 +24,8 @@
     "@inertiajs/inertia": "^0.9.0",
     "@inertiajs/inertia-vue": "^0.6.1",
     "@inertiajs/progress": "^0.2.5",
+    "concurrently": "^6.2.0",
+    "cross-env": "^7.0.3",
     "parcel-bundler": "^1.12.5",
     "portal-vue": "^2.1.7",
     "vue": "^2.6.12",

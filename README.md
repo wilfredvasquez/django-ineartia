@@ -1,23 +1,26 @@
 # Create virtual enviroment
 
+```bash
 virtualenv venv
+```
 
 # Install requirements
 
+```bash
 pip install -r requirements.txt
+```
 
 # Create a project
 
+```bash
 django-admin startproject project-name .
+```
 
 # Settings Database (In our case Postgresql)
 
 ```bash
 sudo su - postgres
 psql
-postgres@wagtail-sandbox:~$ psql
-# psql (9.3.10)
-# Type "help" for help.
 postgres=# CREATE DATABASE inertiademodb;
 postgres=# CREATE USER username WITH PASSWORD 'userpass';
 postgres=# ALTER ROLE username SET client_encoding TO 'utf8';
@@ -27,7 +30,16 @@ postgres=# GRANT ALL PRIVILEGES ON DATABASE inertiademodb TO usernamenameuser;
 postgres=# \q
 ```
 # Install npm package
-
-npm init
+```bash
 npm install
-npm install @inertiajs/inertia @inertiajs/inertia-vue vue
+```
+
+# To export django routes to js_route run
+
+```bash
+python manage.py dump_routes_resolver --format=default --output=static/js/routes/resolver.js
+```
+
+# Run npm to Dev
+
+npm run dev
