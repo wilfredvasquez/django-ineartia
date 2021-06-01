@@ -26,7 +26,7 @@ postgres=# CREATE USER username WITH PASSWORD 'userpass';
 postgres=# ALTER ROLE username SET client_encoding TO 'utf8';
 postgres=# ALTER ROLE username  SET default_transaction_isolation TO 'read committed';
 postgres=# ALTER ROLE username  SET timezone TO 'UTC';
-postgres=# GRANT ALL PRIVILEGES ON DATABASE inertiademodb TO usernamenameuser;
+postgres=# GRANT ALL PRIVILEGES ON DATABASE inertiademodb TO username;
 postgres=# \q
 ```
 # Install npm package
@@ -42,4 +42,16 @@ python manage.py dump_routes_resolver --format=default --output=static/js/routes
 
 # Run npm to Dev
 
+```bash
 npm run dev
+```
+
+### or run on different terminals
+
+```bash
+npm run parcel
+```
+
+```bash
+python manage.py runserver 0.0.0.0:8000
+```
