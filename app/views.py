@@ -7,6 +7,10 @@ from marshmallow import ValidationError
 from . import serializers, models
 
 
+def index(request):
+    return redirect("app:notes")
+
+
 def notes(request):
     notes = models.Note.objects.all()
     note_schema = serializers.NoteSchema(many=True)

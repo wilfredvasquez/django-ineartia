@@ -1,5 +1,6 @@
 <template>
   <layout>
+    
     <div class="row m-2">
       <div class="col-4" v-for="note in notes" :key="note.id">
         <note-info :note="note">

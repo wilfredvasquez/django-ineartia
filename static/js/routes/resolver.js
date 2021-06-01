@@ -1,4 +1,4 @@
-window.routes = {"app:notes": "/notes", "app:notes_detail": "/notes/detail/<id>", "app:notes_edit": "/notes/edit/<id>", "app:notes_update": "/notes/edit/<id>", "app:notes_delete": "/notes/delete/<id>", "app:notes_create": "/notes/create/"};
+window.routes = {"app:index": "/", "app:notes": "/notes", "app:notes_detail": "/notes/detail/<id>", "app:notes_edit": "/notes/edit/<id>", "app:notes_delete": "/notes/delete/<id>", "app:notes_create": "/notes/create/"};
 window.reverseUrl = function(urlName) {
   var url = window.routes[urlName];
   if (!url) {
