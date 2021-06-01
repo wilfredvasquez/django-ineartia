@@ -29,6 +29,15 @@ postgres=# ALTER ROLE username  SET timezone TO 'UTC';
 postgres=# GRANT ALL PRIVILEGES ON DATABASE inertiademodb TO username;
 postgres=# \q
 ```
+
+# Run migrations and load fixtures
+```bash
+python manage.py makemigrations
+python manage.py migrate
+python manage.py loaddata fixtures/*.yaml
+```
+
+
 # Install npm package
 ```bash
 npm install
