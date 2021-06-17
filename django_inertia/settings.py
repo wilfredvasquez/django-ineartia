@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'js_routes',
     'inertia',
 
-    'app.apps.AppConfig'
+    'app.apps.AppConfig',
+    'authentication.apps.AuthenticationConfig'
 ]
 
 MIDDLEWARE = [
@@ -139,6 +140,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 JS_ROUTES_INCLUSION_LIST = [
     'app',
+    'authentication'
 ]
 
 # CSRF_HEADER_NAME="HTTP_X_CSRFTOKEN"
