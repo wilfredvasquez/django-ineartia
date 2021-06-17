@@ -57,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'authentication.middleware.AuthMiddleware',
 ]
 
 ROOT_URLCONF = 'django_inertia.urls'
@@ -148,3 +149,5 @@ VERSION=2
 CSRF_COOKIE_NAME = "XSRF-TOKEN"
 CSRF_HEADER_NAME = "HTTP_X_XSRF_TOKEN"
 INERTIA_SHARE=False
+
+LOGIN_REDIRECT_URL="/"

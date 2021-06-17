@@ -32,17 +32,13 @@ const app = document.getElementById('app');
 // we are getting the initialPage from a rendered json_script
 const page = JSON.parse(document.getElementById("page").textContent);
 
-import Notes from "./Pages/Notes/Index.Vue";
-import Details from "./Pages/Notes/Details.Vue";
-import Edit from "./Pages/Notes/Edit.Vue";
-import Create from "./Pages/Notes/Create.Vue";
+import NotesPages from "./Pages/Notes/pages.js";
+import AuthPages from "./Pages/Auth/pages.js";
 
 const pages = {
-    'Notes': Notes,
-    'Details': Details,
-    'Edit': Edit,
-    'Create': Create
-}
+  ...NotesPages,
+  ...AuthPages
+};
 
 new Vue({
   render: h => h(App, {

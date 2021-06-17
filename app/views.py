@@ -8,10 +8,16 @@ from . import serializers, models
 
 
 def index(request):
+    if not request.user.is_authenticated:
+        return redirect("authentication:login")
+
     return redirect("app:notes")
 
 
 def notes(request):
+    if not request.user.is_authenticated:
+        return redirect("authentication:login")
+
     notes = models.Note.objects.all()
     note_schema = serializers.NoteSchema(many=True)
 
