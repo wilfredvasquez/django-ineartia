@@ -8,10 +8,16 @@ from . import serializers, models
 
 
 def index(request):
+    if not request.user.is_authenticated:
+        return redirect("authentication:login")
+
     return redirect("app:notes")
 
 
 def notes(request):
+    if not request.user.is_authenticated:
+        return redirect("authentication:login")
+
     notes = models.Note.objects.all()
     note_schema = serializers.NoteSchema(many=True)
 
@@ -26,6 +32,9 @@ def notes(request):
 
 
 def notes_detail(request, id):
+    if not request.user.is_authenticated:
+        return redirect("authentication:login")
+
     note = models.Note.objects.get(id=id)
     note_schema = serializers.NoteSchema()
 
@@ -40,6 +49,9 @@ def notes_detail(request, id):
 
 
 def notes_edit(request, id):
+    if not request.user.is_authenticated:
+        return redirect("authentication:login")
+
     note = models.Note.objects.get(id=id)
     note_schema = serializers.NoteSchema()
 
@@ -64,6 +76,9 @@ def notes_edit(request, id):
 
 
 def notes_delete(request, id):
+    if not request.user.is_authenticated:
+        return redirect("authentication:login")
+
     note = models.Note.objects.get(id=id)
     try:
         note.delete()
@@ -75,6 +90,9 @@ def notes_delete(request, id):
 
 
 def notes_create(request):
+    if not request.user.is_authenticated:
+        return redirect("authentication:login")
+
     if request.method == 'POST':
         try:
             note_schema = serializers.NoteSchema()

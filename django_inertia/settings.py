@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'js_routes',
     'inertia',
 
-    'app.apps.AppConfig'
+    'app.apps.AppConfig',
+    'authentication.apps.AuthenticationConfig'
 ]
 
 MIDDLEWARE = [
@@ -56,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'authentication.middleware.AuthMiddleware',
 ]
 
 ROOT_URLCONF = 'django_inertia.urls'
@@ -139,6 +141,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 JS_ROUTES_INCLUSION_LIST = [
     'app',
+    'authentication'
 ]
 
 # CSRF_HEADER_NAME="HTTP_X_CSRFTOKEN"
@@ -146,3 +149,5 @@ VERSION=2
 CSRF_COOKIE_NAME = "XSRF-TOKEN"
 CSRF_HEADER_NAME = "HTTP_X_XSRF_TOKEN"
 INERTIA_SHARE=False
+
+LOGIN_REDIRECT_URL="/"
