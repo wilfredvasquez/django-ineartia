@@ -1,12 +1,12 @@
 <template>
-  <layout :title="title">
+  <layout>
     <div class="row">
-      <div class="col-3"></div>
-        <div class="mt-3 w-50">
+      <div class="col-4"></div>
+        <div class="mt-3 col-4">
           <div v-if="errors">
             <messages variant="danger" :text="errors.username" />
           </div>
-          <b-card class="mt-3">
+          <b-card class="mt-3" title="Register">
             <b-form @submit="onSubmit">
               <b-form-group
                 id="input-group-1"
@@ -97,7 +97,7 @@
 
 <script>
 
-  import Layout from '../../Components/LayoutAuth.Vue'
+  import Layout from '../../Components/Layout.Vue'
   import Messages from '../../Components/Messages.Vue'
 
   export default {

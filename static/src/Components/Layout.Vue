@@ -11,12 +11,12 @@
 </template>
 
 <script>
-    import Header from '../Share/Header.Vue'
+    import NavBar from '../Share/NavBar.Vue'
 
     export default {
         name: 'Layout',
         components: { 
-            'nav-bar': Header
+            'nav-bar': NavBar
         },
         props: {
             note: {
