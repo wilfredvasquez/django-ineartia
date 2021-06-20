@@ -8,10 +8,13 @@ from . import serializers, models
 
 
 def index(request):
-    if not request.user.is_authenticated:
-        return redirect("authentication:login")
+    props = {
+        'title': 'Index',
+    }
 
-    return redirect("app:notes")
+    return render_inertia(
+        request, 'Index', props,
+    )
 
 
 def notes(request):

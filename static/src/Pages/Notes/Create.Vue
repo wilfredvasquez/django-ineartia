@@ -1,5 +1,5 @@
 <template>
-    <layout :note="note">
+    <layout>
         <div class="row">
             <div class="col-3"></div>
             <div class="mt-3 w-50">
