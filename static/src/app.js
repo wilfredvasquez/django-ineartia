@@ -3,10 +3,12 @@ import Vue from 'vue';
 import axios from "axios";
 // import PortalVue from 'portal-vue';
 import { InertiaProgress } from '@inertiajs/progress/src'
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+// import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+// import 'bootstrap/dist/css/bootstrap.css'
+// import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+import "../css/app.css"
 
 let csrftoken = document.getElementsByName("csrfmiddlewaretoken")[0].value;
 axios.defaults.csrfmiddlewaretoken = csrftoken;
@@ -15,8 +17,8 @@ axios.defaults.csrfmiddlewaretoken = csrftoken;
 Vue.config.productionTip = true;
 Vue.use(plugin);
 // Vue.use(PortalVue);
-Vue.use(BootstrapVue);
-Vue.use(IconsPlugin);
+// Vue.use(BootstrapVue);
+// Vue.use(IconsPlugin);
 
 let customRoute = (...args) => {
     args[0] = args[0];
@@ -32,14 +34,10 @@ const app = document.getElementById('app');
 // we are getting the initialPage from a rendered json_script
 const page = JSON.parse(document.getElementById("page").textContent);
 
-import IndexPage from "./Pages/Index.Vue";
-import NotesPages from "./Pages/Notes/pages.js";
-import AuthPages from "./Pages/Auth/pages.js";
+import Pages from "./Pages/pages.js";
 
 const pages = {
-  'Index': IndexPage,
-  ...NotesPages,
-  ...AuthPages
+  ...Pages
 };
 
 new Vue({

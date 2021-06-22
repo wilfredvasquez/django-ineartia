@@ -2,13 +2,22 @@
   "name": "django-inertiajs",
   "version": "1.0.0",
   "description": "Django Inertia Demo",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "runserver": "cross-env PYTHONUNBUFFERED=1 python manage.py runserver 0.0.0.0:8000",
     "parcel": "parcel watch static/src/* -d static/dist/ --public-url /static/dist/",
     "build": "parcel build static/src/* -d static/dist/ --public-url /static/dist/",
     "dev": "concurrently npm:parcel npm:runserver",
     "test_django": "python manage.py test"
+  },
+  "posthtml": {
+    "recognizeSelfClosing": true
+  },
+  "watchreload": {
+    "files": [
+      "**/*.py",
+      "**/templates/**/*.html"
+    ]
   },
   "repository": {
     "type": "git",
@@ -26,6 +35,8 @@
     "@inertiajs/inertia": "^0.9.0",
     "@inertiajs/inertia-vue": "^0.6.1",
     "@inertiajs/progress": "^0.2.5",
+    "@tailwindcss/postcss7-compat": "^2.2.2",
+    "autoprefixer": "^9.8.6",
     "bootstrap": "^5.0.1",
     "bootstrap-vue": "^2.21.2",
     "concurrently": "^6.2.0",
@@ -33,11 +44,12 @@
     "js-cookie": "^2.2.1",
     "parcel-bundler": "^1.12.5",
     "portal-vue": "^2.1.7",
+    "postcss": "^7.0.36",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.2",
     "vue": "^2.6.12",
     "vue-hot-reload-api": "^2.3.4"
   },
   "devDependencies": {
-    "@tailwindcss/postcss7-compat": "^2.1.2",
     "@vue/component-compiler-utils": "^3.2.0",
     "sass": "^1.34.0",
     "vue-template-compiler": "^2.6.12"
