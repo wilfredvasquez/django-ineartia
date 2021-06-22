@@ -36,7 +36,6 @@
                 </b-card>
             </div>
         </div>
-  </div>
     </layout>
 </template>
 

@@ -45,13 +45,13 @@
           </b-card>
         </div>
       </div>
-    </div>
   </layout>
 </template>
 
 <script>
 
   import Layout from '../../Components/Layout.vue'
+  // import Layout from 'src/Components/Layout.vue'
   import Messages from '../../Components/Messages.vue'
 
   export default {

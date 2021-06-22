@@ -22,12 +22,12 @@
 
 <script>
 import Layout from '../../Components/Layout.vue'
-import NoteInfo from '../../Share/NoteInfo.vue'
+// import NoteInfo from '../../Share/NoteInfo.vue'
 
 export default {
     components: { 
         'layout': Layout,
-        'note-info': NoteInfo,
+        // 'note-info': NoteInfo,
     },
     props: {
         note: Object,
