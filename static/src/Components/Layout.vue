@@ -1,7 +1,7 @@
 <template>
     <div>
         <header>
-            <nav-bar :note="note">
+            <nav-bar />
         </header>
 
         <main>
@@ -11,12 +11,13 @@
 </template>
 
 <script>
-    import NavBar from '../Share/NavBar.Vue'
+import NavBar from '../Share/NavBar.vue'
+    // import NavBar from '../Share/NavBar.vue'
 
     export default {
         name: 'Layout',
         components: { 
-            'nav-bar': NavBar
+           'nav-bar': NavBar
         },
         props: {
             note: {
