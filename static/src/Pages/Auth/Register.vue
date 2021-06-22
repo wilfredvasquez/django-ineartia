@@ -97,8 +97,8 @@
 
 <script>
 
-  import Layout from '../../Components/Layout.Vue'
-  import Messages from '../../Components/Messages.Vue'
+  import Layout from '../../Components/Layout.vue'
+  import Messages from '../../Components/Messages.vue'
 
   export default {
     components: { 

@@ -10,6 +10,7 @@ import { InertiaProgress } from '@inertiajs/progress/src'
 
 import "../css/app.css"
 
+
 let csrftoken = document.getElementsByName("csrfmiddlewaretoken")[0].value;
 axios.defaults.csrfmiddlewaretoken = csrftoken;
 

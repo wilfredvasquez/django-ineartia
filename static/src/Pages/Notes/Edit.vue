@@ -41,38 +41,39 @@
 </template>
 
 <script>
-import Layout from '../../Components/Layout.Vue'
+import Layout from '../../Components/Layout.vue'
 
 export default {
     components: { 
         'layout': Layout
     },
     props: {
-        note: {},
+        note: Object,
     },
     remember: 'form',
     data () {
         return {
             sending: false,
             form: {
-                excerpt: "",
-                content: "",
+                id: this.note.id,
+                excerpt: this.note.excerpt,
+                content: this.note.content,
+                // csrfmiddlewaretoken: "",
             },
         }
     },
     methods: {
       onSubmit(event) {
         event.preventDefault();
-        this.$inertia.post(this.route('app:notes_create'), this.form, {
+        this.$inertia.post(this.route('app:notes_edit', this.note.id), this.form, {
             onStart: () => this.sending = true,
             onFinish: () => this.sending = false,
         })
       },
       onReset(event) {
         event.preventDefault()
-        // Reset our form values
-        this.form.excerpt = "";
-        this.form.content = "";
+        this.form.excerpt = this.note.excerpt;
+        this.form.content = this.note.content;
       }
     }
 }

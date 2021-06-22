@@ -11,7 +11,7 @@
 </template>
 
 <script>
-    import NavBar from '../Share/NavBar.Vue'
+    import NavBar from '../Share/NavBar.vue'
 
     export default {
         name: 'Layout',

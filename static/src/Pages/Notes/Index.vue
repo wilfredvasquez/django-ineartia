@@ -22,8 +22,8 @@
 
 <script>
 
-  import Layout from '../../Components/Layout.Vue'
-  import NoteInfo from '../../Share/NoteInfo.Vue'
+  import Layout from '../../Components/Layout.vue'
+  import NoteInfo from '../../Share/NoteInfo.vue'
 
   export default {
       components: { 

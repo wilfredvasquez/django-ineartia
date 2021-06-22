@@ -1,10 +1,10 @@
-import IndexPage from "./Index.Vue";
-import Login from "./Auth/Login.Vue";
-import Register from "./Auth/Register.Vue";
-import Notes from "./Notes/Index.Vue";
-import Details from "./Notes//Details.Vue";
-import Edit from "./Notes//Edit.Vue";
-import Create from "./Notes//Create.Vue";
+import IndexPage from "./Index.vue";
+import Login from "./Auth/Login.vue";
+import Register from "./Auth/Register.vue";
+import Notes from "./Notes/Index.vue";
+import Details from "./Notes//Details.vue";
+import Edit from "./Notes//Edit.vue";
+import Create from "./Notes//Create.vue";
 
 const pages = {
     'Index': IndexPage,

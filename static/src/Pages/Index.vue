@@ -22,7 +22,7 @@
 </template>
 
 <script>
-    import Layout from '../Components/Layout.Vue'
+    import Layout from '../Components/Layout.vue'
     export default {
         components: { 
             'layout': Layout,
