@@ -27,7 +27,9 @@ def login_view(request):
             return redirect(LOGIN_REDIRECT_URL)
         else:
             errors = {'username': "Wrong login"}
-            share_flash(request, errors=errors)
+    
+    share_flash(request, errors=errors)
+
     props = {
         'title': 'Login'
     }

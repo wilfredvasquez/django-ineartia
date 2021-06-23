@@ -11,7 +11,7 @@
                 </div>
                 <div class="mt-5 md:mt-0 md:col-span-2">
                     <form @submit="onSubmit" @reset="onReset">
-                    <div class="shadow overflow-hidden sm:rounded-md">
+                    <div class="shadow overflow-hidden focus:ring-2 focus:ring-offset-2 rounded-md bg-white">
                         <div class="px-4 py-5 bg-white sm:p-6">
                         <div class="grid grid-cols-6 gap-6">
                             <div class="col-span-6 sm:col-span-3">
@@ -20,7 +20,6 @@
                                 id="input-1"
                                 v-model="form.excerpt"
                                 type="text"
-                                style="line-height: 3"
                                 class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                                 required />
                             </div>

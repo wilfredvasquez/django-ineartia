@@ -1,6 +1,9 @@
 <template>
   <layout>
     <div class="mt-10 sm:mt-0">
+      <div v-if="errors.username">
+        <messages variant="error" :text="errors.username" />
+      </div>
       <div class="grid grid-cols-3 gap-4">
         <div class="..."></div>
         <div class="md:grid md:grid-cols-1 md:gap-6">
@@ -11,7 +14,7 @@
           </div>
           <div class="mt-5 md:mt-0 md:col-span-2">
             <form @submit="onSubmit">
-              <div class="shadow overflow-hidden sm:rounded-md">
+              <div class="shadow overflow-hidden focus:ring-2 focus:ring-offset-2 rounded-md bg-white">
                 <div class="px-4 py-5 bg-white sm:p-6">
                   <div class="grid grid-cols-6 gap-6">
                     <div class="col-span-6 sm:col-span-3">
@@ -21,7 +24,6 @@
                         id="username"
                         v-model="form.username"
                         name="username"
-                        style="line-height: 3"
                         class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                         required />
                     </div>
@@ -33,7 +35,6 @@
                         v-model="form.password"
                         name="password"
                         type="password"
-                        style="line-height: 3"
                         class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                         required />
                     </div>
