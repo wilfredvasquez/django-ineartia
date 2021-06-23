@@ -1,13 +1,9 @@
 <template>
   <div>
-    <b-alert
-      :show="dismissCountDown"
-      :variant="variant"
-      @dismissed="dismissCountDown=0"
-      @dismiss-count-down="countDownChanged"
-    >
-      <p>{{ text }}</p>
-    </b-alert>
+    <div class="mx-10 my-8 py-5 shadow overflow-hidden focus:ring-2 focus:ring-offset-2 rounded-md"
+          :class="variant == 'error' ? 'bg-red-300' : 'bg-indigo-300' ">
+      <p class="mx-8">{{ text }}</p>
+    </div>
   </div>
 </template>
 
@@ -28,7 +24,7 @@
         text: {
             type: String,
             default: () => ""
-        }
+        },
     },
     mounted () {
         if(this.text){
