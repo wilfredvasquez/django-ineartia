@@ -10,7 +10,6 @@ const PurgecssPlugin = require("purgecss-webpack-plugin");
 
 
 module.exports = {
-  mode: 'development',
   devtool: 'inline-source-map',
   entry: [
     "./static/src/index.js",
@@ -18,8 +17,8 @@ module.exports = {
   ],
   output: {
     publicPath: "/static/dist/",
-    filename: "index.js",
-    chunkFilename: 'index.js',
+    filename: "[name]-[hash].js",
+    chunkFilename: '[name]-[hash].js',
     path: path.resolve('./static/dist/'),
   },
 
@@ -28,7 +27,7 @@ module.exports = {
     new BundleTracker({ filename: './webpack-stats.json' }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: "index.css"
+      filename: "[name]-[hash].css"
     }),
     new PurgecssPlugin({
       paths: glob.sync([
