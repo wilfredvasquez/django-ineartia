@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'js_routes',
     'inertia',
+    'webpack_loader',
 
     'app.apps.AppConfig',
     'authentication.apps.AuthenticationConfig'
@@ -151,3 +152,12 @@ CSRF_HEADER_NAME = "HTTP_X_XSRF_TOKEN"
 INERTIA_SHARE=False
 
 LOGIN_REDIRECT_URL="/"
+
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        # 'CACHE': not DEBUG,
+        'BUNDLE_DIR_NAME': 'static/dist/',
+        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
+        'IGNORE': [r'.+\.hot-update.js', r'.+\.map']
+    }
+}

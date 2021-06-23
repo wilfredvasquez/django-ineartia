@@ -9,7 +9,8 @@
     "dev": "concurrently npm:start npm:runserver",
     "test_django": "python manage.py test",
     "tailwind": "npx tailwindcss -o static/css/taildwind.css",
-    "start": "npx webpack --watch --progress"
+    "start": "npx webpack --watch --progress --mode development",
+    "build": "npx webpack"
   },
   "posthtml": {
     "recognizeSelfClosing": true

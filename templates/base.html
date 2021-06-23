@@ -1,3 +1,5 @@
+
+{% load render_bundle from webpack_loader %}
 {% load static js_routes_tags %}
 <!DOCTYPE html>
 <html  class="h-full bg-gray-200">
@@ -8,13 +10,12 @@
 
     {% js_routes routes_only=True %}
     
-    <script src="{% static 'dist/index.js' %}" defer></script>
-    <link rel="stylesheet" href="{% static 'dist/index.css' %}">
+    {% render_bundle 'main' 'css' %}
   </head>
   <body class="font-sans leading-none text-gray-700 antialiased">
     {% csrf_token %}
     {{ page|json_script:"page" }}
-    <div id="app">
-    </div>
+    <div id="app"></div>
+    {% render_bundle 'main' 'js' %}
   </body>
 </html>
