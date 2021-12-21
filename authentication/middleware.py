@@ -7,7 +7,6 @@ class AuthMiddleware:
         # One-time configuration and initialization.
 
     def __call__(self, request):
-
         if request.user.is_authenticated: 
             share(request, 'auth', {
                     'user':{
@@ -16,7 +15,8 @@ class AuthMiddleware:
                         'last_name': request.user.last_name,
                         'email': request.user.email,
                         'username': request.user.username,
-                    }
+                    },
+                    'csrftoken': request.COOKIES['XSRF-TOKEN'] if "XSRF-TOKEN" in request.COOKIES else "",
                 })
         else:
             share(request, 'auth', {
@@ -25,7 +25,8 @@ class AuthMiddleware:
                         'firt_name': "",
                         'last_name': "",
                         'username': "",
-                    }
+                    },
+                    'csrftoken': request.COOKIES['XSRF-TOKEN'] if "XSRF-TOKEN" in request.COOKIES else "",
                 })
         response = self.get_response(request)
         return response

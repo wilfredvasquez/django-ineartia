@@ -35,4 +35,3 @@ window.reverseUrl = function(urlName) {
 
   return url;
 };
-

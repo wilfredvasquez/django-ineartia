@@ -7,18 +7,21 @@ from django.urls import reverse
 from inertia.views import render_inertia
 from inertia.share import share_flash
 from marshmallow import ValidationError
+from utils.decorators import validate_csrf_from_mobile
 
 from . import serializers
 
 LOGIN_REDIRECT_URL = getattr(settings, "LOGIN_REDIRECT_URL", "/")
 
+
+@validate_csrf_from_mobile
 def login_view(request):
     errors = {'username': ""}
     if request.user.is_authenticated:
         return redirect(LOGIN_REDIRECT_URL)
 
     if request.method == "POST":
-        data  = json.loads(request.body)
+        data = json.loads(request.body)
         username = data.get("username")
         password = data.get("password")
         user = authenticate(request, username=username, password=password)
@@ -27,7 +30,7 @@ def login_view(request):
             return redirect(LOGIN_REDIRECT_URL)
         else:
             errors = {'username': "Wrong login"}
-    
+
     share_flash(request, errors=errors)
 
     props = {
@@ -63,5 +66,3 @@ def register_view(request):
         'title': 'Register'
     }
     return render_inertia(request, "Register", props)
-
-

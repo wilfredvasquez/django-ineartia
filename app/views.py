@@ -5,6 +5,7 @@ from inertia.share import share_flash
 from marshmallow import ValidationError
 
 from . import serializers, models
+from utils.decorators import validate_csrf_from_mobile
 
 
 def index(request):
@@ -51,6 +52,7 @@ def notes_detail(request, id):
     )
 
 
+@validate_csrf_from_mobile
 def notes_edit(request, id):
     if not request.user.is_authenticated:
         return redirect("authentication:login")
@@ -63,11 +65,11 @@ def notes_edit(request, id):
             data = note_schema.loads(request.body)
         except ValidationError as err:
             share_flash(request, error="Exists errors on form")
-            share_flash(request, errors= err.messages)
+            share_flash(request, errors=err.messages)
         else:
             models.Note.objects.filter(id=id).update(**data)
             return redirect(reverse("app:notes_detail", kwargs={'id': note.id}))
-    
+
     props = {
         'title': 'Edit Note',
         'note': note_schema.dump(note)
@@ -88,10 +90,11 @@ def notes_delete(request, id):
         return redirect(reverse("app:notes"))
     except Exception:
         pass
-    
+
     return redirect(reverse("app:notes_detail", kwargs={'id': note.id}))
 
 
+@validate_csrf_from_mobile
 def notes_create(request):
     if not request.user.is_authenticated:
         return redirect("authentication:login")
@@ -102,11 +105,11 @@ def notes_create(request):
             data = note_schema.loads(request.body)
         except ValidationError as err:
             share_flash(request, error="Exists errors on form")
-            share_flash(request, errors= err.messages)
+            share_flash(request, errors=err.messages)
         else:
             models.Note.objects.create(**data)
             return redirect(reverse("app:notes"))
-    
+
     props = {
         'title': 'Create Note',
     }

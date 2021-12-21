@@ -30,7 +30,8 @@ SECRET_KEY = '41)8z4t!fd*$h8kg0o!kqzl-jmao=g#rvg#kk&6t8cc5q3eq+p'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DJANGO_DEBUG", False)
 
-ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['localhost'])
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=[
+                         'localhost', '192.168.0.105'])
 
 
 # Application definition
@@ -45,7 +46,6 @@ INSTALLED_APPS = [
     'js_routes',
     'inertia',
     'webpack_loader',
-
     'app.apps.AppConfig',
     'authentication.apps.AuthenticationConfig'
 ]
@@ -54,11 +54,11 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'authentication.middleware.AuthMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
 ]
 
 ROOT_URLCONF = 'django_inertia.urls'
@@ -146,12 +146,12 @@ JS_ROUTES_INCLUSION_LIST = [
 ]
 
 # CSRF_HEADER_NAME="HTTP_X_CSRFTOKEN"
-VERSION=2
+VERSION = 2
 CSRF_COOKIE_NAME = "XSRF-TOKEN"
 CSRF_HEADER_NAME = "HTTP_X_XSRF_TOKEN"
-INERTIA_SHARE=False
+INERTIA_SHARE = False
 
-LOGIN_REDIRECT_URL="/"
+LOGIN_REDIRECT_URL = "/"
 
 WEBPACK_LOADER = {
     'DEFAULT': {
