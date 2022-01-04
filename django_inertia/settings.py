@@ -31,7 +31,7 @@ SECRET_KEY = '41)8z4t!fd*$h8kg0o!kqzl-jmao=g#rvg#kk&6t8cc5q3eq+p'
 DEBUG = env.bool("DJANGO_DEBUG", False)
 
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=[
-                         'localhost', '192.168.0.105'])
+                         'localhost'])
 
 
 # Application definition
